@@ -1,23 +1,26 @@
-# Usa Node.js 22 como base
+# Usa Node.js 22 como base oficial
 FROM node:22
 
-# Instala ffmpeg
-RUN apt-get update && apt-get install -y ffmpeg
+# Instala ffmpeg (para procesamiento de audio/video)
+RUN apt-get update && apt-get install -y ffmpeg && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Crea directorio de trabajo
+# Establece el directorio de trabajo dentro del contenedor
 WORKDIR /app
 
-# Copia package.json y package-lock.json
+# Copia solo los archivos de dependencias primero para aprovechar el cache
 COPY package*.json ./
 
-# Instala dependencias
-RUN npm install
+# Instala las dependencias definidas en package.json
+RUN npm install --production
 
-# Copia el resto del proyecto
+# Copia el resto del código fuente al contenedor
 COPY . .
 
-# Expone el puerto que usará Render (por defecto es 3000)
+# Expone el puerto que la app usará (por defecto 3000 en Render)
 EXPOSE 3000
 
-# Comando que ejecuta migraciones y arranca el servidor
+# Establece la variable de entorno NODE_ENV a producción
+ENV NODE_ENV=production
+
+# Comando para ejecutar migraciones y luego arrancar el servidor
 CMD ["npm", "start"]
