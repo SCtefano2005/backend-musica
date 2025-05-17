@@ -1,10 +1,10 @@
 const { expressjwt: jwt } = require('express-jwt');
-const { jwtSecret } = require('../config/config');
+const { jwtSecret } = require('../config/db');
 
 const authMiddleware = jwt({
   secret: jwtSecret,
   algorithms: ['HS256'],
-  requestProperty: 'auth' // el token decodificado estará en req.auth
+  requestProperty: 'auth'
 });
 
 module.exports = authMiddleware;
