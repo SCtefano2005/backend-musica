@@ -1,16 +1,16 @@
 {
   "development": {
-    "username": "pruebaga_user",
-    "password": "otiEelOl3YFYD0gTGPU7rvY2FDubxBiD",
-    "database": "pruebaga",
-    "host": "dpg-d0k4itruibrs7396vv50-a",
+    "username": "root",
+    "password": "YZSxkcaWgxGGsoWK5n60dK3vjipz6eNn",
+    "database": "musicabd",
+    "host": "dpg-d0kgsrre5dus73bpnikg-a",
     "dialect": "postgres"
   },
   "production": {
-    "username": "pruebaga_user",
-    "password": "otiEelOl3YFYD0gTGPU7rvY2FDubxBiD",
-    "database": "pruebaga",
-    "host": "dpg-d0k4itruibrs7396vv50-a",
+    "username": "root",
+    "password": "YZSxkcaWgxGGsoWK5n60dK3vjipz6eNn",
+    "database": "musicabd",
+    "host": "dpg-d0kgsrre5dus73bpnikg-a",
     "dialect": "postgres",
     "dialectOptions": {
       "ssl": {
