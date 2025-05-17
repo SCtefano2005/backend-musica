@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "npx sequelize db:migrate && node index.js"
+    "start": "npx sequelize db:migrate && node app.js"
   },
   "keywords": [],
   "author": "",
